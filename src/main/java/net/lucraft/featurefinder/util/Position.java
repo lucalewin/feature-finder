@@ -1,6 +1,8 @@
-package net.lucraft.featurefinder;
+package net.lucraft.featurefinder.util;
 
 import net.lucraft.featurefinder.util.math.MathHelper;
+
+import java.util.Objects;
 
 public class Position {
 
@@ -58,6 +60,18 @@ public class Position {
 
     public static Position fromLong(long pos) {
         return new Position(unpackLongX(pos), unpackLongY(pos), unpackLongZ(pos));
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Position position)) return false;
+        return getX() == position.getX() && getY() == position.getY() && getZ() == position.getZ();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getX(), getY(), getZ());
     }
 
     public int getX() {
