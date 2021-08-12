@@ -1,10 +1,11 @@
 package net.lucraft.featurefinder.util;
 
 import net.lucraft.featurefinder.util.math.MathHelper;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
-public class Position {
+public record Position(int x, int y, int z) {
 
     private static final int SIZE_BITS_X;
     private static final int SIZE_BITS_Z;
@@ -24,14 +25,6 @@ public class Position {
         BITS_Z = (1L << SIZE_BITS_Z) - 1L;
         BIT_SHIFT_Z = SIZE_BITS_Y;
         BIT_SHIFT_X = SIZE_BITS_Y + SIZE_BITS_Z;
-    }
-
-    public final int x, y, z;
-
-    public Position(int x, int y, int z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
     }
 
     public long asLong() {
@@ -58,6 +51,7 @@ public class Position {
         return (int)(packedPos << 64 - BIT_SHIFT_Z - SIZE_BITS_Z >> 64 - SIZE_BITS_Z);
     }
 
+    @NotNull
     public static Position fromLong(long pos) {
         return new Position(unpackLongX(pos), unpackLongY(pos), unpackLongZ(pos));
     }
