@@ -8,16 +8,15 @@ Features that have already been implemented, features that are currently being i
 
 #### available features
 
-none
+- slime_chunk
+
+#### features in development
+- amethyst_geode
+- witch_hud
+- quad_witch_hud
 
 #### unsupported features
 
 - dessert_well
 - village
 - ...
-
-#### features in development
-- slime_chunk
-- amethyst_geode
-- witch_hud
-- quad_witch_hud
