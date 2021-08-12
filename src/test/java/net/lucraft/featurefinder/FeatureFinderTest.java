@@ -1,9 +1,9 @@
 package net.lucraft.featurefinder;
 
+import net.lucraft.featurefinder.features.WitchHudFeature;
+import net.lucraft.featurefinder.util.Feature;
 import net.lucraft.featurefinder.util.Position;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class FeatureFinderTest {
 
@@ -11,6 +11,6 @@ class FeatureFinderTest {
     void findFeature() {
         FeatureFinder featureFinder = new FeatureFinder(9346852934856498L);
 
-        Position pos = featureFinder.findFeature(Feature.WITCH_HUD);
+        net.lucraft.featurefinder.features.Feature pos = featureFinder.findFeature(Feature.WITCH_HUD);
     }
 }

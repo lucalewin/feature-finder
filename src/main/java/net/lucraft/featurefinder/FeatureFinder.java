@@ -1,17 +1,18 @@
 package net.lucraft.featurefinder;
 
+import net.lucraft.featurefinder.features.AmethystGeodeFeature;
+import net.lucraft.featurefinder.features.QuadWitchHudFeature;
+import net.lucraft.featurefinder.features.SlimeChunkFeature;
+import net.lucraft.featurefinder.features.WitchHudFeature;
+import net.lucraft.featurefinder.util.Feature;
 import net.lucraft.featurefinder.util.Position;
 
-public class FeatureFinder {
+public record FeatureFinder(long seed) {
 
-    private final long seed;
+    public static final long SEED = 0;
 
-    public FeatureFinder(long seed) {
-        this.seed = seed;
-    }
-
-    public Position findFeature(Feature feature) {
-        Position pos = null;
+    public net.lucraft.featurefinder.features.Feature findFeature(Feature feature) {
+        net.lucraft.featurefinder.features.Feature pos = null;
         switch (feature) {
             case SLIME_CHUNK -> pos = findSlimeChunk();
             case AMETHYST_GEODE -> pos = findAmethystGeode();
@@ -21,19 +22,19 @@ public class FeatureFinder {
         return pos;
     }
 
-    private Position findSlimeChunk() {
+    private SlimeChunkFeature findSlimeChunk() {
         return null;
     }
 
-    private Position findAmethystGeode() {
+    private AmethystGeodeFeature findAmethystGeode() {
         return null;
     }
 
-    private Position findWitchHud() {
+    private WitchHudFeature findWitchHud() {
         return null;
     }
 
-    private Position findQuadWitchHud() {
+    private QuadWitchHudFeature findQuadWitchHud() {
         return null;
     }
 
