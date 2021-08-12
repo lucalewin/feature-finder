@@ -1,4 +1,4 @@
-package net.lucraft.featurefinder;
+package net.lucraft.featurefinder.util;
 
 public enum Feature {
     SLIME_CHUNK,
